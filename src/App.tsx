@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const Link: React.FC<{text : string }> = ({text}) => (
+const Link: React.FC<{text : string}> = ({text}) => (
     <a
       className="App-link"
       href="https://reactjs.org"
@@ -24,7 +24,12 @@ const Image: React.FC<{logo: string, className: string, alt: string}> =
     <img src={logo} className={className} alt={alt} />
   )
 
-const Header: React.FC<{className: string, children: ReactElement[]}> = ({className, children}) => (
+interface ClassWithChildren {
+  className: string,
+  children: ReactElement[]
+}
+
+const Header: React.FC<ClassWithChildren> = ({className, children}) => (
     <header className={className} style={{
       "background-color": "#282c34",
       "min-height": "100vh",
@@ -39,7 +44,7 @@ const Header: React.FC<{className: string, children: ReactElement[]}> = ({classN
     </header>
 )
 
-const Div: React.FC<{className: string, children: ReactElement[]}> = ({className, children}) => (
+const Div: React.FC<ClassWithChildren>= ({className, children}) => (
   <div className={className}>
     {children}
   </div>
