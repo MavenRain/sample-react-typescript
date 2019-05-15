@@ -44,7 +44,7 @@ const Header: React.FC<ClassWithChildren> = ({className, children}) => (
     </header>
 )
 
-const Div: React.FC<ClassWithChildren>= ({className, children}) => (
+const Div: React.FC<ClassWithChildren> = ({className, children}) => (
   <div className={className}>
     {children}
   </div>
